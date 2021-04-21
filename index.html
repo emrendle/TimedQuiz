@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buffy Quiz</title>
+    <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+    <header>
+        <button>View High Scores</button>
+        <div id="timer">
+            <h4>Quiz Timer:</h2>
+            <p id="timerDisplay">Timer Goes Here</p>
+        </div>
+    </header>
+    <div class="start-container" id="startGame">
+        <button id="startButton">Start Game</button>
+    </div>
+    <div class="question-container" id="questions">
+        <h1 id="question-text">What is the answer to this question?</h1>
+        <button class="btn" id="choice1">Choice 1</button>
+        <button class="btn" id="choice2">Choice 2</button>
+        <button class="btn" id="choice3">Choice 3</button>
+        <button class="btn" id="choice4">Choice 4</button>
+        <div class="result-container" id="results">
+        </div>
+    </div>
+    <div id="endgame" class="end-container">
+        <input type="text" id="initials">
+        <input type="submit" id="submitForm">
+        <button id="reset">Reset Game</button>
+    </div>
+    <script src="assets/script.js"></script>
+</body>
+</html>
