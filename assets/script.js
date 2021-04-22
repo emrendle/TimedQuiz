@@ -11,8 +11,14 @@ const startEl = document.getElementById("startGame");
 const timerDisplay = document.getElementById("timerDisplay");
 const endScreen = document.getElementById("endgame");
 const resetButton = document.getElementById("reset");
+const intialsInput = document.getElementById("initials");
+const scoresButton = document.getElementById("scores");
+const scoresEl = document.getElementById("scores-container");
+const submitBtn = document.getElementById("submitForm");
+let scoresList = document.getElementById("scores-list");
 let questionCounter = 0;
 let timeLeft = 60;
+let scores = [];
 
 const questions = [
     {
@@ -57,6 +63,19 @@ const questions = [
     }
   ];
 
+function timer() {
+  let timer = setInterval(function() {
+      timerDisplay.innerHTML='00:'+timeLeft;
+      timeLeft--;
+      if (timeLeft < 0) {
+          clearInterval(timer);
+          endGame();
+      } else if (questionCounter === 3) {
+        clearInterval(timer);
+      }
+  }, 1000);
+}
+  
 function buildQuiz () {
     startEl.setAttribute("style", "display: none;");
     questionContainer.setAttribute("style", "display: flex;");
@@ -93,35 +112,52 @@ function evaluateAnswer (event) {
     }
 }
 
-function timer(){
-    let timer = setInterval(function(){
-        timerDisplay.innerHTML='00:'+timeLeft;
-        timeLeft--;
-        if (timeLeft < 0) {
-            clearInterval(timer);
-            endGame();
-        }
-    }, 1000);
-}
-
 function endGame () {
     questionContainer.setAttribute("style", "display: none;");
     endScreen.setAttribute("style", "display: flex;");
     resetButton.addEventListener("click", function () {
-        location.reload();
+      location.reload();
         return false;
     });
     if (timeLeft < 0) {
         timeLeft = 0;
+    };
+    scoresGenerator();
     }
-    // push info to object or array here
-    // localStorage.setItem("score", timeLeft);
-    // localStorage.setItem("initials", input.value);
+
+function scoresGenerator () {
+  submitBtn.addEventListener("click", function (event) {
+    event.preventDefault();
+    let scoresObj = {
+      initials: intialsInput.value,
+      score: timeLeft
+    };
+    scores.push(scoresObj);
+    localStorage.setItem("scores", JSON.stringify(scores));
+  });
+}
+
+function displayScores () {
+  for (i = 0; i < scores.length; i++) {
+    let newLi = document.createElement("li");
+    newLi.textContent = `${scores[i].initials} : ${scores[i].score}`;
+    scoresList.appendChild(newLi);
+  }
+  scoresButton.removeEventListener("click", function () {
+    displayScores();
+});
 }
 
 function init () {
+    scores = JSON.parse(localStorage.getItem("scores"));
+    if (scores === null) {
+      scores = [];
+    }
     questionContainer.setAttribute("style", "display: none;");
     endScreen.setAttribute("style", "display: none;");
+    scoresButton.addEventListener("click", function () {
+      displayScores();
+    });
     startButton.addEventListener("click", function () {
         buildQuiz();
         timer();
@@ -129,7 +165,3 @@ function init () {
 }
 
 init();
-
-// need to stop the timer when the user reaches the end page without the timer hitting zero (freeze the timer at the current time)
-// need to store the value of the input (initials field) as a key-value pair (do this upon clicking submit button? store the time remaining at the same time as clicking submit?)
-// empty array(s) or object to push timeleft(score) and initials to in order to JSON.stringify and commit to local storage - then when highscores is clicked the info can be parsed and displayed based on index/object notation

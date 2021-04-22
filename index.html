@@ -9,27 +9,32 @@
 </head>
 <body>
     <header>
-        <button>View High Scores</button>
+        <button id="scores">View High Scores</button>
+        <div id="scores-container">
+            <ol id="scores-list">
+        
+            </ol>
+        </div>
         <div id="timer">
-            <h4>Quiz Timer:</h2>
-            <p id="timerDisplay">Timer Goes Here</p>
+            <h4>Quiz Timer:</h4>
+            <p id="timerDisplay"></p>
         </div>
     </header>
     <div class="start-container" id="startGame">
         <button id="startButton">Start Game</button>
     </div>
     <div class="question-container" id="questions">
-        <h1 id="question-text">What is the answer to this question?</h1>
-        <button class="btn" id="choice1">Choice 1</button>
-        <button class="btn" id="choice2">Choice 2</button>
-        <button class="btn" id="choice3">Choice 3</button>
-        <button class="btn" id="choice4">Choice 4</button>
+        <h1 id="question-text"></h1>
+        <button class="btn" id="choice1"></button>
+        <button class="btn" id="choice2"></button>
+        <button class="btn" id="choice3"></button>
+        <button class="btn" id="choice4"></button>
         <div class="result-container" id="results">
         </div>
     </div>
     <div id="endgame" class="end-container">
-        <input type="text" id="initials">
-        <input type="submit" id="submitForm">
+        <input type="text" id="initials" placeholder="Input your initials!">
+        <button id="submitForm">Submit</button>
         <button id="reset">Reset Game</button>
     </div>
     <script src="assets/script.js"></script>
