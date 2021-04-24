@@ -13,7 +13,7 @@
 }
 
 .scores-button {
-    background-color: purple;
+    background-color: rgb(80, 19, 50);
     color: white;
     padding: 6px;
     margin: 6px;
@@ -71,7 +71,7 @@
     width: 50%;
     padding: 12px;
     margin: 12px;
-    background-color: purple;
+    background-color: rgb(80, 19, 50);
     color: white;
 }
 
