@@ -1,16 +1,78 @@
+* {
+    box-sizing: border-box;
+    font-family: monospace;
+}
+
+.header-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+    padding: 12px;
+}
+
+.scores-button {
+    background-color: purple;
+    color: white;
+    padding: 6px;
+    margin: 6px;
+}
+
+.scores-button:hover {
+    cursor: pointer;
+    transform: scale(1.02);
+    transform: transform 100ms;
+}
+
+.start-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 50%;
+}
+
+.body-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.scores-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-start;
+    text-align: center;
+    padding: 2px;
+    width: 75%;
+}
 
 .question-container {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    
+    width: 50%;
+}
+
+.end-container {
+    display: flex;
+    justify-content: center;
+    padding: 6px;
+    width: 50%;
+    align-items: center;
 }
 
 .btn {
-    width: 30%;
-    padding: 1rem;
-    margin: 1rem;
+    width: 50%;
+    padding: 12px;
+    margin: 12px;
+    background-color: purple;
+    color: white;
 }
 
 .btn:hover {
@@ -22,87 +84,6 @@
 h1 {
     text-align: center;
 }
-
-/* * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    font-family: monospace;
-}
-
-h1 {
-    font-size: 5.4rem;
-    margin-bottom: 5rem;
-    text-align: center;
-}
-
-h2 {
-    font-size: 4.2rem;
-    margin-bottom: 4rem;
-}
-
-.container {
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    max-width: 80rem;
-    margin: 0 auto;
-    padding: 2rem;
-    flex-direction: column;
-}
-
-.choice-container {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 0.8rem;
-    width: 10%;
-    border-radius: 4px;
-    background-color: purple;
-    color: white;
-    font-size: 3rem;
-    min-width: 80rem;
-}
-
-.choice-container:hover {
-    cursor: pointer;
-    transform: scale(1.02);
-    transform: transform 100ms;
-}
-
-.choice-prefix {
-    padding: 2rem 2.5rem;
-    color: white;
-}
-
-.choice-text {
-    padding: 2rem;
-    width: 100%;
-}
-
-.correct {
-    background-color: green;
-}
-
-.incorrect {
-    background-color: red;
-}
-
-/* #hud {
-    display: flex;
-    justify-content: space-between;
-}
-
-.hud-prefix {
-    text-align: center;
-    font-size: 2rem;
-}
-
-.hud-main-text {
-    text-align: center;
-} */
-
 
 
 @media screen and (max-width: 768px) {

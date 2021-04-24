@@ -7,35 +7,35 @@
     <title>Buffy Quiz</title>
     <link rel="stylesheet" href="assets/style.css">
 </head>
-<body>
-    <header>
-        <button id="scores">View High Scores</button>
-        <div id="scores-container">
-            <ol id="scores-list">
-        
+<body class="body-container">
+    <header class="header-container"> 
+        <button id="scores" class="scores-button">View High Scores</button>
+        <div class= "scores-container" id="scores-container">
+            <ol id="scores-list"> 
             </ol>
         </div>
-        <div id="timer">
+        <div id="timer" class="timer-container">
             <h4>Quiz Timer:</h4>
             <p id="timerDisplay"></p>
         </div>
     </header>
     <div class="start-container" id="startGame">
-        <button id="startButton">Start Game</button>
+        <p>Are you ready to test your knowledge of Buffy the Vampire Slayer? For each question answered incorrectly, 15 seconds is subtracted from your time. The time remaining at the end of the quiz is your score. Click Start Game to begin the quiz!</p>
+        <button id="startButton" class="btn">Start Game</button>
     </div>
     <div class="question-container" id="questions">
         <h1 id="question-text"></h1>
-        <button class="btn" id="choice1"></button>
-        <button class="btn" id="choice2"></button>
-        <button class="btn" id="choice3"></button>
-        <button class="btn" id="choice4"></button>
+        <button class="qbtn btn" id="choice1"></button>
+        <button class="qbtn btn" id="choice2"></button>
+        <button class="qbtn btn" id="choice3"></button>
+        <button class="qbtn btn" id="choice4"></button>
         <div class="result-container" id="results">
         </div>
     </div>
     <div id="endgame" class="end-container">
         <input type="text" id="initials" placeholder="Input your initials!">
-        <button id="submitForm">Submit</button>
-        <button id="reset">Reset Game</button>
+        <button id="submitForm" class="btn">Submit</button>
+        <button id="reset" class="btn">Reset Game</button>
     </div>
     <script src="assets/script.js"></script>
 </body>
