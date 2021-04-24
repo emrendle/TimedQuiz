@@ -124,7 +124,7 @@ function evaluateAnswer (event) {
           timeLeft = 0;
       }
   }
-  // If the question index is less than the items in the questions array and the timer is still has time on it, the question index will be incremented and the buildQuiz function will run again with a new question based on the index value
+  // If the question index is less than the items in the questions array and the timer is still has time on it, the question index will be incremented and the buildQuiz function will run again with a new question based on the index value. Currently hardcoded but breaks when I use questions.length?
   if (questionIndex < 3 && timeLeft > 0){ 
       questionIndex++;
       buildQuiz();
